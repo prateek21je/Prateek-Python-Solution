@@ -1,21 +1,15 @@
-# Q6
-def prime(a, b):
-    list = []
-    for i in range(a, b):
-        if i == 0 or i == 1:
-            continue
-        else:
-            for j in range(2, int(i/2)+1):
-                if i % j == 0:
-                    break
-            else:
-                list.append(i)
-    return list
+#Q6
 
-starting = int(input("starting: "))
-ending = int(input("ending: "))
-pme = prime(starting, ending)
-if len(pme) == 0:
-    print("no prime numbers ")
-else:
-    print("prime numbers in this range : ", pme)
+import array
+array=[]
+def fcn(array):
+    for i in range(0, len(array)):    
+        for j in range(i+1, len(array)):    
+            if(array[i] > array[j]):    
+                temp = array[i]  
+                array[i] = array[j]    
+                array[j] = temp  
+    for j in range(100):
+        if array[j]==array[j+1]:
+            print(array[j])
+fcn([1,2,3,4,5,6,5,])
